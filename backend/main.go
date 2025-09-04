@@ -3,28 +3,10 @@ package main
 import (
 	"net/http"
 
+	"backend/routes"
+
 	"github.com/gin-gonic/gin"
 )
-
-// album represents data about a record album.
-type album struct {
-	ID     string `json:"id"`
-	Title  string `json:"title"`
-	Artist string `json:"artist"`
-	Fave   string `json:"fave"`
-}
-
-// albums slice to seed record album data.
-var albums = []album{
-	{ID: "1", Title: "Anti", Artist: "Rihanna", Fave: "Love on the Brain"},
-	{ID: "2", Title: "Swimming", Artist: "Mac Miller", Fave: "2009"},
-	{ID: "3", Title: "Blonde", Artist: "Frank Ocean", Fave: "Ivy"},
-}
-
-// getAlbums responds with the list of all albums as JSON.
-func getAlbums(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, albums)
-}
 
 func setupRouter() *gin.Engine {
 	// Disable Console Color
@@ -41,8 +23,10 @@ func setupRouter() *gin.Engine {
 		c.String(http.StatusOK, "pong")
 	})
 
-	// Get Albums
-	router.GET("/albums", getAlbums)
+	// Albums
+	router.GET("/albums", routes.GetAlbums)
+	router.GET("/albums/:id", routes.GetAlbumByID)
+	router.POST("/albums", routes.PostAlbums)
 
 	return router
 }
