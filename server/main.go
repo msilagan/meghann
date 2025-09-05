@@ -5,26 +5,15 @@ import (
 	"log"
 	"net/http"
 
-	"backend/routes"
+	"server/models"
+	"server/routes"
 
 	"github.com/gin-gonic/gin"
 
 	_ "github.com/mattn/go-sqlite3"
 )
 
-var DB *sql.DB
-
-func ConnectDatabase() {
-	var err error
-	DB, err = sql.Open("sqlite3", "./data.db")
-	if err != nil {
-		log.Fatal("Failed to connect to DB:", err)
-	}
-}
-
-func setupRouter() *gin.Engine {
-	// Disable Console Color
-	// gin.DisableConsoleColor()
+func setupRouter(db *sql.DB) *gin.Engine {
 	router := gin.Default()
 
 	// Home
@@ -37,20 +26,41 @@ func setupRouter() *gin.Engine {
 		c.String(http.StatusOK, "pong")
 	})
 
-	// Albums
-	router.GET("/albums", routes.GetAlbums)
-	router.GET("/albums/:id", routes.GetAlbumByID)
-	router.POST("/albums", routes.PostAlbums)
+	// Pass db connection to routes package
+	routes.ConnectDB(db)
+
+	// Register all album routes
+	routes.RegisterAlbumRoutes(router)
 
 	return router
 }
 
-func main() {
-	// DB
-	ConnectDatabase()
+func setupDatabase(db *sql.DB) error {
+	if err := models.CreateAlbumsTable(db); err != nil {
+		return err
+	}
+	if err := models.CreateResumesTable(db); err != nil {
+		return err
+	}
+	if err := models.SeedAlbums(db); err != nil {
+		return err
+	}
+	return nil
+}
 
-	// Router
-	r := setupRouter()
-	// Listen and Server in 0.0.0.0:8080
-	r.Run(":8080")
+func main() {
+	db, err := models.InitDB("data.db")
+	if err != nil {
+		log.Fatal("Failed to open database:", err)
+	}
+	defer db.Close()
+
+	if err := setupDatabase(db); err != nil {
+		log.Fatal("Database setup failed:", err)
+	}
+
+	r := setupRouter(db)
+	if err := r.Run(":8080"); err != nil {
+		log.Fatal("Failed to start server:", err)
+	}
 }
