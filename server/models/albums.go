@@ -1,6 +1,10 @@
 package models
 
-import "database/sql"
+import (
+	"database/sql"
+	"fmt"
+	"log"
+)
 
 // album represents data about a record album.
 type Album struct {
@@ -25,22 +29,33 @@ func CreateAlbumsTable(db *sql.DB) error {
 	return err
 }
 
-// albums slice to seed record album data.
 func SeedAlbums(db *sql.DB) error {
-	albums := []Album{
-		{Title: "Anti", Artist: "Rihanna", Fave: "Love on the Brain", ReleaseYear: 2016},
-		{Title: "Swimming", Artist: "Mac Miller", Fave: "2009", ReleaseYear: 2018},
-		{Title: "Blonde", Artist: "Frank Ocean", Fave: "Ivy", ReleaseYear: 2016},
+	// Check if the albums table is already populated
+	var count int
+	err := db.QueryRow("SELECT COUNT(*) FROM albums").Scan(&count)
+	if err != nil {
+		return fmt.Errorf("failed to count rows in albums table: %v", err)
 	}
 
-	for _, album := range albums {
-		_, err := db.Exec(`
-            INSERT INTO albums (title, artist, fave, release_year)
-            VALUES (?, ?, ?, ?)`,
-			album.Title, album.Artist, album.Fave, album.ReleaseYear)
-		if err != nil {
-			return err
+	// If there are no records, seed the table with some initial albums
+	if count == 0 {
+		albums := []Album{
+			{Title: "Anti", Artist: "Rihanna", Fave: "Love on the Brain", ReleaseYear: 2016},
+			{Title: "Swimming", Artist: "Mac Miller", Fave: "2009", ReleaseYear: 2018},
+			{Title: "Blonde", Artist: "Frank Ocean", Fave: "Ivy", ReleaseYear: 2016},
 		}
+
+		for _, album := range albums {
+			// Insert each album into the table
+			_, err := db.Exec("INSERT INTO albums (title, artist, fave, release_year) VALUES (?, ?, ?, ?)", album.Title, album.Artist, album.Fave, album.ReleaseYear)
+			if err != nil {
+				log.Printf("Error inserting album %s: %v\n", album.Title, err)
+				return err
+			}
+		}
+		log.Println("Albums table seeded successfully")
+	} else {
+		log.Println("Albums table already contains data, skipping seeding.")
 	}
 
 	return nil

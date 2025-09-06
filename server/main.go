@@ -8,6 +8,7 @@ import (
 	"server/models"
 	"server/routes"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 
 	_ "github.com/mattn/go-sqlite3"
@@ -15,6 +16,9 @@ import (
 
 func setupRouter(db *sql.DB) *gin.Engine {
 	router := gin.Default()
+
+	// Enable CORS for all origins
+	router.Use(cors.Default())
 
 	// Home
 	router.GET("/", func(c *gin.Context) {
