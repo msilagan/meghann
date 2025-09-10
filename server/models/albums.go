@@ -42,7 +42,7 @@ func SeedAlbums(db *sql.DB) error {
 		albums := []Album{
 			{Title: "Anti", Artist: "Rihanna", Fave: "Love on the Brain", ReleaseYear: 2016},
 			{Title: "Swimming", Artist: "Mac Miller", Fave: "2009", ReleaseYear: 2018},
-			{Title: "Blonde", Artist: "Frank Ocean", Fave: "Ivy", ReleaseYear: 2016},
+			{Title: "Blonde", Artist: "Frank Ocean", Fave: "Self Control", ReleaseYear: 2016},
 		}
 
 		for _, album := range albums {
