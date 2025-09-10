@@ -6,6 +6,7 @@ export default function Navbar() {
   const links = [
     { path: "/", label: "Home" },
     { path: "/favorites", label: "Favorites" },
+    { path: "/resume", label: "Resume" },
   ];
 
   return (
