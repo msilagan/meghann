@@ -12,8 +12,8 @@ export default function Albums() {
 
   return (
     <div className="max-w-5xl mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-8">
-        🎶 Featured Albums
+      <h1 className="text-3xl font-bold text-indigo-600 mb-8 text-center">
+        💖 Favorite Albums
       </h1>
 
       {albums.length === 0 ? (
