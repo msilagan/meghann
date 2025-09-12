@@ -6,15 +6,38 @@ import MyIcon from "../assets/meghann_icon.png";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
 // Core skills for badges
-const coreSkills = ["Terraform", "AWS", "GCP", "Python", "Golang", "Kubernetes", "Jenkins"];
+const coreSkills = [
+  "Terraform",
+  "AWS",
+  "GCP",
+  "Python",
+  "Golang",
+  "Kubernetes",
+  "Jenkins",
+];
 
 // Skill categories for additional skills
 const skillCategories = {
-  Certifications: ["HashiCorp Cloud Engineer Certification - Terraform Associate"],
+  Certifications: [
+    "HashiCorp Cloud Engineer Certification - Terraform Associate",
+  ],
   Languages: ["Terraform", "Golang", "Python"],
   Monitoring: ["Datadog", "Dynatrace"],
-  "Build & Deploy": ["Jenkins", "GitHub Actions", "Docker", "Kubernetes", "Git", "Artifactory", "Ansible"],
-  Other: ["Terraform Enterprise", "GitHub Enterprise", "Ruby on Rails", "Agile Project Management"],
+  "Build & Deploy": [
+    "Jenkins",
+    "GitHub Actions",
+    "Docker",
+    "Kubernetes",
+    "Git",
+    "Artifactory",
+    "Ansible",
+  ],
+  Other: [
+    "Terraform Enterprise",
+    "GitHub Enterprise",
+    "Ruby on Rails",
+    "Agile Project Management",
+  ],
 };
 
 // Professional experience
@@ -65,19 +88,25 @@ const leadership = [
     title: "Certified Snowboard Instructor",
     org: "Ski and Snowboard School, Stevens Pass",
     period: "Nov 2022 – Present",
-    points: ["Provides personalized instruction to diverse groups in a safe and fun environment."],
+    points: [
+      "Provides personalized instruction to diverse groups in a safe and fun environment.",
+    ],
   },
   {
     title: "Cultural Pillar Lead",
     org: "Asian Leadership Network, General Mills",
     period: "Jan 2021 – Oct 2021",
-    points: ["Planned inclusive events for hundreds of employees and families."],
+    points: [
+      "Planned inclusive events for hundreds of employees and families.",
+    ],
   },
   {
     title: "Engagement Pillar Lead",
     org: "Women in Digital and Technology, General Mills",
     period: "Aug 2020 – Oct 2021",
-    points: ["Organized events to empower women in technology and amplify their voices."],
+    points: [
+      "Organized events to empower women in technology and amplify their voices.",
+    ],
   },
 ];
 
@@ -110,20 +139,34 @@ export default function Resume() {
 
           {/* Social Links */}
           <section className="flex gap-6 text-indigo-600 text-3xl mt-4">
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">
+            <a
+              href="https://linkedin.com/in/yourprofile"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaLinkedin />
             </a>
-            <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaGithub />
             </a>
-            <a href="https://twitter.com/yourhandle" target="_blank" rel="noreferrer">
+            <a
+              href="https://twitter.com/yourhandle"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaTwitter />
             </a>
           </section>
 
           {/* Core Skills Badges */}
           <section className="w-full text-center mt-6">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">Core Skills</h2>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+              Core Skills
+            </h2>
             <div className="flex flex-wrap justify-center gap-2">
               {coreSkills.map((skill, i) => (
                 <Badge key={skill} label={skill} delay={i * 50} />
@@ -196,7 +239,9 @@ export default function Resume() {
                     key={category}
                     className="bg-indigo-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
                   >
-                    <h3 className="text-gray-700 font-semibold mb-1">{category}</h3>
+                    <h3 className="text-gray-700 font-semibold mb-1">
+                      {category}
+                    </h3>
                     <ul className="list-disc list-inside text-gray-600">
                       {filtered.map((skill) => (
                         <li key={skill}>{skill}</li>
@@ -224,8 +269,12 @@ export default function Resume() {
                 <h3 className="text-xl font-semibold text-indigo-600">
                   Bachelor of Computer Engineering
                 </h3>
-                <p className="text-gray-700 mt-1">University of Minnesota – Twin Cities</p>
-                <p className="text-gray-500 mt-1">Minneapolis, MN | Class of 2019</p>
+                <p className="text-gray-700 mt-1">
+                  University of Minnesota – Twin Cities
+                </p>
+                <p className="text-gray-500 mt-1">
+                  Minneapolis, MN | Class of 2019
+                </p>
               </div>
             </div>
           </section>

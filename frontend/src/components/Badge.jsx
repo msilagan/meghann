@@ -1,17 +1,15 @@
 import React from "react";
-
-export default function Badge({ label, delay = 0, color = "indigo" }) {
-  // Tailwind dynamic colors
-  const bgColor = `bg-${color}-100`;
-  const textColor = `text-${color}-800`;
-
+export default function Badge({ label }) {
   return (
-    <span
-      className={`px-4 py-2 rounded-full font-medium shadow-md hover:shadow-xl transition-transform duration-300 ${bgColor} ${textColor} cursor-default`}
-      data-aos="fade-up"
-      data-aos-delay={delay}
-    >
-      {label}
+    <span className="relative inline-block rounded-full p-[2px]">
+      {" "}
+      {/* Gradient border wrapper */}{" "}
+      <span className="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-300 to-blue-300"></span>{" "}
+      {/* Inner transparent badge */}{" "}
+      <span className="relative inline-block px-4 py-2 rounded-full bg-white border border-transparent text-gray-800 font-medium">
+        {" "}
+        {label}{" "}
+      </span>{" "}
     </span>
   );
 }

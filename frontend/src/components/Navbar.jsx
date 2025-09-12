@@ -10,20 +10,21 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="w-full top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-indigo-600">Meghann Silagan</h1>
+        {/* Logo */}
+        <h1 className="text-2xl text-indigo-800">Meghann Silagan</h1>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex space-x-6 text-gray-600 font-medium">
+        <nav className="md:flex space-x-6 text-indigo-600 font-medium">
           {links.map((link) => (
             <NavLink
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
                 isActive
-                  ? "text-indigo-600 font-bold border-b-2 border-indigo-600"
-                  : "hover:text-indigo-500 transition-colors duration-200"
+                  ? "text-indigo-800"
+                  : "hover:border-b-2 border-indigo-800 transition-colors duration-200"
               }
             >
               {link.label}
@@ -35,13 +36,28 @@ export default function Navbar() {
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="focus:outline-none text-gray-600 hover:text-indigo-600"
+            className="focus:outline-none text-white hover:text-indigo-300"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               {isOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
             </svg>
           </button>
@@ -50,8 +66,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <nav className="md:hidden bg-white shadow-md">
-          <ul className="flex flex-col px-6 py-4 space-y-2">
+        <nav className="md:hidden bg-transparent">
+          <ul className="flex flex-col px-6 py-4 space-y-2 text-white">
             {links.map((link) => (
               <NavLink
                 key={link.path}
@@ -59,8 +75,8 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-indigo-600 font-bold block py-2"
-                    : "text-gray-600 hover:text-indigo-500 block py-2 transition-colors duration-200"
+                    ? "text-indigo-400 font-bold block py-2"
+                    : "hover:text-indigo-300 block py-2 transition-colors duration-200"
                 }
               >
                 {link.label}

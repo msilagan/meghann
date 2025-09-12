@@ -1,33 +1,35 @@
 import React from "react";
 import Layout from "./Layout";
 import Badge from "./Badge";
+import TypingText from "./TypingText";
 import MyIcon from "../assets/meghann_icon.png";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const professionalHighlights = [
-  "Engineered autonomous monitoring for hundreds of services at Chewy.",
-  "Led cloud adoption initiatives using Terraform, AWS, and GCP.",
-  "Automated CI/CD pipelines to optimize deployments for enterprise teams.",
-  "Mentored interns and guided team adoption of DORA metrics.",
+  "Engineered scalable cloud infrastructure for production workloads across AWS and GCP.",
+  "Improved system reliability with automated SLOs/SLIs and proactive alerting frameworks.",
+  "Optimized CI/CD pipelines with Jenkins and GitHub Actions to streamline deployments",
+  "Designed hybrid cloud strategies supporting business-critical data analytics workloads.",
 ];
 
 const keySkills = ["Terraform", "AWS", "GCP", "Python", "Kubernetes", "CI/CD"];
+const descriptors = ["Terraform", "AWS", "GCP", "Python", "Kubernetes", "CI/CD"];
 
 export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center py-20 bg-gradient-to-b from-indigo-50 via-white to-indigo-100 rounded-3xl shadow-lg mx-4 lg:mx-0">
+      <section className="flex flex-col items-center justify-center text-center py-20 bg-w-full bg-gradient-to-b from-indigo-50 via-white to-indigo-100">
         <img
           src={MyIcon}
           alt="Meghann Silagan"
-          className="w-36 h-36 rounded-full shadow-xl border-4 border-indigo-200 mb-6 hover:scale-105 transition-transform duration-300"
+          className="w-36 h-36 rounded-full shadow-xl border-4 border-indigo-600 mb-6 hover:scale-105 transition-transform duration-300"
         />
-        <h1 className="text-5xl font-extrabold text-indigo-600 mb-2">
+        <h1 className="text-5xl font-extrabold text-indigo-800 mb-2">
           MEGHANN C. SILAGAN
         </h1>
-        <p className="text-xl text-gray-600 mb-4">
-          DevOps & Cloud Engineer | Automating the Cloud | Solving Technical Challenges
+        <p>
+        <TypingText words={["DevOps Engineer", "Cloud Engineer", "Problem Solver"]} speed={150} pause={1000} />
         </p>
 
         {/* Key Skills Badges */}
@@ -39,17 +41,25 @@ export default function Home() {
 
         {/* Social Links */}
         <div className="flex gap-6 text-indigo-600 text-3xl mb-6">
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">
+          <a
+            href="https://linkedin.com/in/meghann-silagan"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaLinkedin />
           </a>
-          <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/msilagan"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaGithub />
           </a>
         </div>
 
         {/* Resume Link */}
         <a
-          href="/resume"
+          href="#/resume"
           className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-700 transition-colors duration-300"
         >
           View Full Resume
