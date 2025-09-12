@@ -1,63 +1,58 @@
 import React, { useState, useEffect } from "react";
 
 export default function TypingText({
-  words,
-  speed = 120,       // typing speed per character
-  pause = 1000,      // pause at the end of each word
+  words = [],
+  speed = 50,        // typing speed per character (ms)
+  deleteSpeed = 25,  // deleting speed per character (ms)
+  pause = 800,       // pause after typing full word (ms)
   color = "text-indigo-600",
-  cursorBlink = 500, // blink speed in ms
+  fontSize = "text-3xl", // Tailwind font size class
 }) {
-  const [text, setText] = useState("");
-  const [index, setIndex] = useState(0);
-  const [subIndex, setSubIndex] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-  const [showCursor, setShowCursor] = useState(true);
+  const [displayed, setDisplayed] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
-  // Typing & deleting effect
   useEffect(() => {
-    if (!words.length) return;
-
-    const currentWord = words[index];
+    const currentWord = words[wordIndex % words.length];
     let timeout;
 
-    if (deleting) {
-      if (subIndex > 0) {
-        timeout = setTimeout(() => {
-          setSubIndex(subIndex - 1);
-          setText(currentWord.slice(0, subIndex - 1));
-        }, speed / 2);
+    if (!isDeleting) {
+      if (displayed.length < currentWord.length) {
+        timeout = setTimeout(
+          () => setDisplayed(currentWord.slice(0, displayed.length + 1)),
+          speed
+        );
       } else {
-        setDeleting(false);
-        setIndex((prev) => (prev + 1) % words.length);
+        timeout = setTimeout(() => setIsDeleting(true), pause);
       }
     } else {
-      if (subIndex < currentWord.length) {
-        timeout = setTimeout(() => {
-          setSubIndex(subIndex + 1);
-          setText(currentWord.slice(0, subIndex + 1));
-        }, speed);
+      if (displayed.length > 0) {
+        timeout = setTimeout(
+          () => setDisplayed(currentWord.slice(0, displayed.length - 1)),
+          deleteSpeed
+        );
       } else {
-        timeout = setTimeout(() => setDeleting(true), pause);
+        setIsDeleting(false);
+        setWordIndex((prev) => prev + 1);
       }
     }
 
     return () => clearTimeout(timeout);
-  }, [subIndex, deleting, index, words, speed, pause]);
-
-  // Cursor blink effect
-  useEffect(() => {
-    const cursorInterval = setInterval(() => {
-      setShowCursor((prev) => !prev);
-    }, cursorBlink);
-    return () => clearInterval(cursorInterval);
-  }, [cursorBlink]);
+  }, [displayed, isDeleting, wordIndex, words, speed, deleteSpeed, pause]);
 
   return (
-    <span className={`flex items-center gap-1 font-bold text-2xl md:text-4xl ${color}`}>
-      <span>{text}</span>
-      <span className="inline-block w-[1ch]">
-        {showCursor ? "|" : " "}
-      </span>
+    <span className={`relative ${color} font-bold ${fontSize}`}> 
+      > {displayed}
+      <span className="absolute -right-0.5 inline-block w-[1px] h-full bg-current animate-blink"></span>
+      <style jsx>{`
+        @keyframes blink {
+          0%, 50%, 100% { opacity: 1; }
+          25%, 75% { opacity: 0; }
+        }
+        .animate-blink {
+          animation: blink 1s step-start infinite;
+        }
+      `}</style>
     </span>
   );
 }

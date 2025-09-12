@@ -13,7 +13,7 @@ const professionalHighlights = [
 ];
 
 const keySkills = ["Terraform", "AWS", "GCP", "Python", "Kubernetes", "CI/CD"];
-const descriptors = ["Terraform", "AWS", "GCP", "Python", "Kubernetes", "CI/CD"];
+const heroHighlights = ["DevOps Engineer", "Cloud Engineer", "Problem Solver"];
 
 export default function Home() {
   return (
@@ -29,7 +29,13 @@ export default function Home() {
           MEGHANN C. SILAGAN
         </h1>
         <p>
-        <TypingText words={["DevOps Engineer", "Cloud Engineer", "Problem Solver"]} speed={150} pause={1000} />
+        <TypingText 
+          words={heroHighlights} 
+          speed={50}       
+          deleteSpeed={25} 
+          pause={800} 
+          color="text-indigo-600"
+        />
         </p>
 
         {/* Key Skills Badges */}
