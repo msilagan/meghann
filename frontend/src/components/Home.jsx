@@ -15,11 +15,22 @@ const professionalHighlights = [
 
 const keySkills = ["Terraform", "AWS", "GCP", "Python", "Kubernetes", "CI/CD"];
 const heroHighlights = [
-  "DevOps Warrior",
+  "DevOps Diva",
   "Certified Snowboard Instructor",
+  "Automation Addict",
   "Site Reliability Goddess",
-  "Cloud Infrastructure Connoisseur",
-  "Taco Enthusiast",
+  "Dedicated Dog Mom",
+  "Cloud Infrastructure Champion",
+  "Taco-Driven Developer 🌮",
+  "React Rookie 🐣",
+  "K8s Connoisseur",
+  "Amateur Barista",
+  "Hybrid Cloud Hype Woman",
+  "Pipeline Perfectionist",
+  "Bug Exterminator 🐛",
+  "CI/CD Conjurer",
+  "Log Whisperer",
+  "Video Game Virtuoso",
 ];
 
 export default function Home() {
@@ -43,9 +54,9 @@ export default function Home() {
         <p className="mb-4">
           <TypingText
             words={heroHighlights}
-            speed={58}
-            deleteSpeed={28}
-            pause={850}
+            speed={60}
+            deleteSpeed={29}
+            pause={2000}
             color="text-indigo-500"
             fontSize="text-3xl"
           />
@@ -54,7 +65,7 @@ export default function Home() {
         {/* Key Skills Badges */}
         <div className="flex flex-wrap justify-center gap-3 mb-6">
           {keySkills.map((skill, i) => (
-            <Badge key={i} label={skill} size="md" delay={i * 50} />
+            <Badge key={i} label={skill} size="sm" delay={i * 50} />
           ))}
         </div>
 

@@ -5,7 +5,7 @@ export default function ExperienceTimeline() {
   // Professional experience
   const experience = [
     {
-      title: "Relevant Site Reliability Engineer",
+      title: "Site Reliability Engineer",
       company: "Chewy, Seattle, WA",
       period: "Nov 2021 – Jul 2025",
       points: [
@@ -50,10 +50,18 @@ export default function ExperienceTimeline() {
       <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center lg:text-left">
         Professional Experience
       </h2>
-      <div className="relative border-l-2 border-indigo-200 ml-4 pl-6 space-y-8">
+
+      <div className="relative ml-4 pl-6 space-y-8">
+        {/* Gradient timeline line */}
+        <div className="absolute left-0 top-0 w-[1px] bg-gradient-to-b from-indigo-400 via-pink-300 to-purple-400 rounded animate-line-grow"></div>
+
         {experience.map((job, i) => (
           <div key={i} className="relative group">
-            <div className="absolute -left-4 top-2 w-4 h-4 bg-indigo-600 rounded-full border-2 border-white shadow-lg transition-transform duration-300 group-hover:scale-110"></div>
+            {/* Timeline bullet */}
+            <div className="absolute -left-4 top-2 text-indigo-600 font-normal text-xl transition-transform duration-300 group-hover:translate-x-1">
+              &gt;
+            </div>
+
             <Card
               title={job.title}
               subtitle={`${job.company} | ${job.period}`}

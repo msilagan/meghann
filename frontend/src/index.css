@@ -11,3 +11,16 @@
     background-position: 0% 50%;
   }
 }
+
+@keyframes grow-line {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.animate-line-grow {
+  animation: grow-line 1s ease-out forwards;
+}

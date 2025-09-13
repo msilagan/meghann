@@ -4,7 +4,7 @@ export default function TypingText({
   words = [],
   speed = 50, // typing speed per character (ms)
   deleteSpeed = 25, // deleting speed per character (ms)
-  pause = 800, // pause after typing full word (ms)
+  pause = 900, // pause after typing full word (ms)
   color = "text-indigo-600",
   fontSize = "text-3xl", // Tailwind font size class
 }) {

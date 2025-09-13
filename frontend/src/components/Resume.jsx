@@ -129,7 +129,6 @@ export default function Resume() {
               <FaTwitter />
             </a>
           </section>
-          
 
           {/* Core Skills Badges */}
           <section className="w-full text-center mt-6">
