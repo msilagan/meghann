@@ -4,8 +4,7 @@ import Layout from "./Layout";
 
 export default function Favorite() {
   return (
-    <Layout>
-      <Albums />
-    </Layout>
+    <Albums />
+    
   );
 }

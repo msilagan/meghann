@@ -34,7 +34,12 @@ build-backend:
 # Clean
 clean:
 	rm -rf $(FRONTEND_DIR)/dist
+	rm -rf $(FRONTEND_DIR)/node_modules/.cache
 	rm -rf $(BACKEND_DIR)/server
+
+# Deploy
+deploy:
+	cd $(FRONTEND_DIR) && $(NPM) run deploy
 
 # Kill processes occupying the ports (8080 for backend, 3000 for frontend)
 .PHONY: kill
