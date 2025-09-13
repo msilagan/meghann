@@ -29,9 +29,9 @@ export default function Navbar({ darkMode, setDarkMode }) {
                   className={({ isActive }) =>
                     `relative pb-1 transition-colors duration-300 ${
                       isActive
-                        ? "text-indigo-800"
-                        : "text-indigo-600 opacity-70"
-                    } before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-0 before:bg-indigo-800 before:transition-all before:duration-300 hover:before:w-full`
+                        ? "text-indigo-800 dark:text-indigo-300"
+                        : "text-indigo-600 opacity-70 dark:text-indigo-300"
+                    } before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-0 before:bg-indigo-800 before:transition-all before:duration-300 dark:before:bg-indigo-400 hover:before:w-full`
                   }
                 >
                   {link.label}
@@ -48,7 +48,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="ml-3 focus:outline-none text-white hover:text-indigo-300"
+              className="ml-3 focus:outline-none text-indigo-500 dark:text-indigo-300 dark:hover:text-indigo-500 hover:text-indigo-300"
             >
               <svg
                 className="w-6 h-6"

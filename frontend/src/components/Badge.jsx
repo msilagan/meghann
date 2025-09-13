@@ -22,11 +22,11 @@ export default function Badge({ label, size = "md" }) {
   return (
     <span className="relative inline-block rounded-full p-[1px]">
       {/* Gradient border wrapper */}
-      <span className="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-300 to-blue-300"></span>
+      <span className="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-300 to-blue-300 dark:from-pink-300 dark:to-indigo-500"></span>
 
       {/* Inner badge */}
       <span
-        className={`relative inline-block ${padding} rounded-full bg-white border border-transparent text-gray-600 font-medium ${text}`}
+        className={`relative inline-block ${padding} rounded-full bg-white border border-transparent text-gray-600 font-medium dark:bg-indigo-950 dark:text-gray-50 ${text}`}
       >
         {label}
       </span>

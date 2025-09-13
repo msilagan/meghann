@@ -25,9 +25,18 @@ export default function App() {
   return (
     <Layout darkMode={darkMode} setDarkMode={setDarkMode}>
       <Routes>
-        <Route path="/" element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />} />
-        <Route path="/favorites" element={<Favorites darkMode={darkMode} setDarkMode={setDarkMode} />} />
-        <Route path="/resume" element={<Resume darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        <Route
+          path="/"
+          element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />}
+        />
+        <Route
+          path="/favorites"
+          element={<Favorites darkMode={darkMode} setDarkMode={setDarkMode} />}
+        />
+        <Route
+          path="/resume"
+          element={<Resume darkMode={darkMode} setDarkMode={setDarkMode} />}
+        />
       </Routes>
     </Layout>
   );

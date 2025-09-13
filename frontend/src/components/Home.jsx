@@ -2,6 +2,7 @@ import React from "react";
 import Badge from "./Badge";
 import TypingText from "./TypingText";
 import MyIcon from "../assets/meghann_icon.png";
+import ActionButton from "./ActionButton";
 import {
   FaLinkedin,
   FaGithub,
@@ -50,7 +51,7 @@ export default function Home() {
           className="w-40 h-40 rounded-full shadow-xl border-4 border-indigo-300 mb-4 hover:scale-110 transition-transform duration-300"
         />
 
-        <h1 className="text-6xl text-indigo-800 mb-5 font-light">
+        <h1 className="text-6xl text-indigo-800 mb-5 font-light dark:text-indigo-100">
           Hi, I'm Meghann
         </h1>
 
@@ -60,7 +61,7 @@ export default function Home() {
             speed={60}
             deleteSpeed={29}
             pause={1950}
-            color="text-indigo-500"
+            color="text-indigo-500 dark:text-indigo-300"
             fontSize="text-3xl"
           />
         </p>
@@ -71,7 +72,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="flex gap-6 text-indigo-500 text-3xl mb-6">
+        <div className="flex gap-6 text-indigo-500 text-3xl mb-6 dark:text-indigo-300">
           <a
             href="https://linkedin.com/in/meghann-silagan"
             target="_blank"
@@ -98,25 +99,16 @@ export default function Home() {
           </a>
         </div>
 
+        {/* Resume buttons using same component */}
         <section className="flex flex-wrap gap-4 justify-center mt-6">
-          <NavLink
-            to="/resume"
-            className="relative inline-flex items-center gap-2 px-6 py-3 rounded-full font-mono font-semibold text-white bg-gradient-to-r from-indigo-400 to-pink-300 shadow-lg overflow-hidden group hover:from-pink-500 hover:to-indigo-600 transition-colors duration-300"
-          >
-            <FaWpexplorer className="w-6 h-6" />
-            Explore CV
-            <span className="absolute inset-0 bg-white opacity-10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></span>
-          </NavLink>
-
-          <a
-            href={`${import.meta.env.BASE_URL}Meghann_Silagan_Resume.pdf`}
+          <ActionButton icon={FaWpexplorer} iconSize={25} text="Explore CV" to="/resume" />
+          <ActionButton
+            icon={FaDownload}
+            text="Download Resume"
+            to={`${import.meta.env.BASE_URL}Meghann_Silagan_Resume.pdf`}
+            external
             download="Meghann_Silagan_Resume.pdf"
-            className="relative inline-flex items-center gap-2 px-6 py-3 rounded-full font-mono font-semibold text-white bg-gradient-to-r from-indigo-400 to-pink-300 shadow-lg overflow-hidden group hover:from-pink-500 hover:to-indigo-600 transition-colors duration-300"
-          >
-            <FaDownload className="w-5 h-5" />
-            <span className="relative z-10">Download Resume</span>
-            <span className="absolute inset-0 bg-white opacity-10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></span>
-          </a>
+          />
         </section>
       </section>
 

@@ -14,7 +14,7 @@ export default function Footer() {
         }}
       ></div>
 
-      <footer className="mt-0 bg-white/25 backdrop-blur-sm py-6">
+      <footer className="mt-0 bg-white/25 dark:bg-black/10 backdrop-blur-sm py-6">
         <div className="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-center gap-16">
           {/* Left: Photo + Name + Icons */}
           <div className="flex items-center gap-6">
@@ -29,7 +29,7 @@ export default function Footer() {
 
             {/* Name + Icons stacked vertically */}
             <div className="flex flex-col items-start justify-center gap-2">
-              <span className="text-xl lg:text-2xl text-indigo-700 leading-snug">
+              <span className="text-xl lg:text-2xl text-indigo-700 dark:text-indigo-200 leading-snug">
                 Meghann C. <br /> Silagan
               </span>
 
@@ -64,82 +64,82 @@ export default function Footer() {
           {/* Right: Links */}
           <div className="flex flex-col sm:flex-row gap-12 text-sm text-center lg:text-left">
             <div className="flex flex-col gap-1 items-center lg:items-start">
-              <h3 className="font-bold uppercase text-gray-400 pb-1">
+              <h3 className="font-bold uppercase text-gray-400 dark:text-gray-200 pb-1">
                 Explore
               </h3>
               <a
                 href="#features"
-                className="text-gray-600 hover:underline hover:text-indigo-700 transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
                 Features
               </a>
               <a
                 href="#docs"
-                className="text-gray-600 hover:underline hover:text-indigo-700 transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
                 Docs
               </a>
               <a
                 href="#pricing"
-                className="text-gray-600 hover:underline hover:text-indigo-700 transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
                 Pricing
               </a>
               <a
                 href="#security"
-                className="text-gray-600 hover:underline hover:text-indigo-700 transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
                 Security
               </a>
             </div>
 
             <div className="flex flex-col gap-1 items-center lg:items-start">
-              <h3 className="font-bold uppercase text-gray-400 pb-1">
+              <h3 className="font-bold uppercase text-gray-400 dark:text-gray-200 pb-1">
                 Company
               </h3>
               <a
                 href="#about"
-                className="text-gray-600 hover:underline hover:text-indigo-700 transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
                 About Us
               </a>
               <a
                 href="#contact"
-                className="text-gray-600 hover:underline hover:text-indigo-700 transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
                 Contact
               </a>
               <a
                 href="#support"
-                className="text-gray-600 hover:underline hover:text-indigo-700 transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
                 Support
               </a>
               <a
                 href="#news"
-                className="text-gray-600 hover:underline hover:text-indigo-700 transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
                 News
               </a>
             </div>
 
             <div className="flex flex-col gap-1 items-center lg:items-start">
-              <h3 className="font-bold uppercase text-gray-400 pb-1">Legal</h3>
+              <h3 className="font-bold uppercase text-gray-400 dark:text-gray-200 pb-1">Legal</h3>
               <a
                 href="#imprint"
-                className="text-gray-600 hover:underline hover:text-indigo-700 transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
                 Imprint
               </a>
               <a
                 href="#privacy"
-                className="text-gray-600 hover:underline hover:text-indigo-700 transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
                 Privacy Policy
               </a>
               <a
                 href="#terms"
-                className="text-gray-600 hover:underline hover:text-indigo-700 transition-colors"
+                className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
                 Terms of Use
               </a>
