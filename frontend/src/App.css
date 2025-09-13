@@ -42,3 +42,15 @@
 .read-the-docs {
   color: #888;
 }
+
+animation: {
+  pulse: 'pulse 6s infinite',
+  ping: 'ping 4s infinite',
+  float: 'float 10s ease-in-out infinite',
+},
+keyframes: {
+  float: {
+    '0%, 100%': { transform: 'translateY(0px)' },
+    '50%': { transform: 'translateY(-20px)' },
+  },
+}

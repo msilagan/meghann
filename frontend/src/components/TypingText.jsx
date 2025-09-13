@@ -7,6 +7,7 @@ export default function TypingText({
   pause = 900, // pause after typing full word (ms)
   color = "text-indigo-600",
   fontSize = "text-3xl", // Tailwind font size class
+  beginChar = "> "
 }) {
   const [displayed, setDisplayed] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
@@ -45,7 +46,7 @@ export default function TypingText({
   return (
     <span className={`relative ${color} font-mono font-bold ${fontSize}`}>
       <span>
-        {"> "} {displayed}
+        {beginChar} {displayed}
       </span>
       <span className="inline-block w-[1px] h-6 bg-current ml-1 animate-blink"></span>
       <style jsx>{`
