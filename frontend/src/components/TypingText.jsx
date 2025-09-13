@@ -42,7 +42,7 @@ export default function TypingText({
 
   return (
     <span className={`relative ${color} font-bold ${fontSize}`}> 
-      > {displayed}
+      {">"} {displayed}
       <span className="absolute -right-0.5 inline-block w-[1px] h-full bg-current animate-blink"></span>
       <style jsx>{`
         @keyframes blink {

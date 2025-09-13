@@ -13,28 +13,28 @@ const professionalHighlights = [
 ];
 
 const keySkills = ["Terraform", "AWS", "GCP", "Python", "Kubernetes", "CI/CD"];
-const heroHighlights = ["DevOps Engineer", "Cloud Engineer", "Problem Solver"];
+const heroHighlights = ["DevOps Warrior", "Certified Snowboard Instructor", "Site Reliability Goddess", "Cloud Infrastructure Connoisseur", "Taco Enthusiast"];
 
 export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center py-20 bg-w-full bg-gradient-to-b from-indigo-50 via-white to-indigo-100">
+      <section className="flex flex-col items-center justify-center text-center py-20 bg-w-full">
         <img
           src={MyIcon}
           alt="Meghann Silagan"
-          className="w-36 h-36 rounded-full shadow-xl border-4 border-indigo-600 mb-6 hover:scale-105 transition-transform duration-300"
+          className="w-40 h-40 rounded-full shadow-xl border-4 border-indigo-300 mb-2 hover:scale-115 transition-transform duration-300"
         />
-        <h1 className="text-5xl font-extrabold text-indigo-800 mb-2">
-          MEGHANN C. SILAGAN
+        <h1 className="text-6xl text-indigo-800 mb-5">
+          Hi, I'm Meghann
         </h1>
-        <p>
+        <p className="mb-4">
         <TypingText 
           words={heroHighlights} 
-          speed={50}       
+          speed={60}       
           deleteSpeed={25} 
-          pause={800} 
-          color="text-indigo-600"
+          pause={850} 
+          color="text-indigo-500"
         />
         </p>
 

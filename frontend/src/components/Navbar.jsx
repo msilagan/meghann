@@ -10,10 +10,11 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="w-full top-0 z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="w-full top-0 z-50 border-b border-gray-200 shadow-xs">
+
+      <div className="max-w-6xl mx-auto px-2 py-3 flex items-center justify-between ">
         {/* Logo */}
-        <h1 className="text-2xl text-indigo-800">Meghann Silagan</h1>
+        <h1 className="text-2xl text-indigo-700">Meghann Silagan</h1>
 
         {/* Desktop Menu */}
         <nav className="md:flex space-x-6 text-indigo-600 font-medium">
@@ -24,7 +25,7 @@ export default function Navbar() {
               className={({ isActive }) =>
                 isActive
                   ? "text-indigo-800"
-                  : "hover:border-b-2 border-indigo-800 transition-colors duration-200"
+                  : "hover:border-b-2 border-indigo-800 transition-colors duration-200 opacity-70"
               }
             >
               {link.label}
