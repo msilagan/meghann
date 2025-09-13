@@ -2,8 +2,9 @@ import React from "react";
 import Layout from "./Layout";
 import Card from "./Card";
 import Badge from "./Badge";
+import ExperienceTimeline from "./ExperienceTimeline";
 import MyIcon from "../assets/meghann_icon.png";
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaTwitter, FaDownload } from "react-icons/fa";
 
 // Core skills for badges
 const coreSkills = [
@@ -39,48 +40,6 @@ const skillCategories = {
     "Agile Project Management",
   ],
 };
-
-// Professional experience
-const experience = [
-  {
-    title: "Relevant Site Reliability Engineer",
-    company: "Chewy, Seattle, WA",
-    period: "Nov 2021 – Jul 2025",
-    points: [
-      "Engineered autonomous monitoring as code to bootstrap alerts, SLOs/SLIs, and more for hundreds of services.",
-      "Automated application scaling processes for over 140 services during peak season traffic periods.",
-      "Devised deployment strategies for internationalization and migration, optimizing CICD rollouts.",
-      "Mentored interns on DORA metrics project delivery.",
-    ],
-  },
-  {
-    title: "Cloud Engineer",
-    company: "General Mills, Minneapolis, MN",
-    period: "Jul 2021 – Oct 2021",
-    points: [
-      "Accelerated hybrid cloud adoption through scalable infrastructure as code.",
-      "Led architecture for Data & Analytics teams’ cloud infrastructure.",
-      "Provisioned Azure Kubernetes clusters, subscriptions, projects, IAM policies for evaluation of multiple cloud platforms.",
-    ],
-  },
-  {
-    title: "Associate Platform Engineer",
-    company: "General Mills, Minneapolis, MN",
-    period: "Aug 2019 – Jul 2021",
-    points: [
-      "Established cloud migration framework with Terraform Enterprise, Sentinel Policy, and Ansible.",
-      "Transformed team to Agile with Kanban boards, scrum meetings, git repos, Jenkins pipelines.",
-    ],
-  },
-  {
-    title: "Full Stack Software Engineer",
-    company: "Software for Good, Minneapolis, MN",
-    period: "Sep 2018 – May 2019",
-    points: [
-      "Designed & developed full-stack application for a mission-driven client using Ruby on Rails & Javascript/JQuery.",
-    ],
-  },
-];
 
 // Leadership
 const leadership = [
@@ -136,9 +95,18 @@ export default function Resume() {
               Lover of Things | Technical Problem Solver
             </p>
           </section>
+          <a
+            href={`${import.meta.env.BASE_URL}Meghann_Silagan_Resume.pdf`}
+            download="Meghann_Silagan_Resume.pdf"
+            className="relative inline-flex items-center gap-2 px-6 py-3 rounded-full font-mono font-semibold text-white bg-gradient-to-r from-indigo-400 to-pink-300 shadow-lg overflow-hidden group hover:from-pink-500 hover:to-indigo-600 transition-colors duration-300"
+          >
+            <FaDownload className="w-5 h-5" />
+            <span className="relative z-10">Download Resume PDF</span>
+            <span className="absolute inset-0 bg-white opacity-10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></span>
+          </a>
 
           {/* Social Links */}
-          <section className="flex gap-6 text-indigo-600 text-3xl mt-4">
+          <section className="flex gap-6 text-indigo-600 text-3xl mt-3">
             <a
               href="https://linkedin.com/in/yourprofile"
               target="_blank"
@@ -161,12 +129,10 @@ export default function Resume() {
               <FaTwitter />
             </a>
           </section>
+          
 
           {/* Core Skills Badges */}
           <section className="w-full text-center mt-6">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-              Core Skills
-            </h2>
             <div className="flex flex-wrap justify-center gap-2">
               {coreSkills.map((skill, i) => (
                 <Badge key={skill} label={skill} delay={i * 50} />
@@ -177,30 +143,8 @@ export default function Resume() {
 
         {/* Right Column: Timeline + Leadership + Additional Skills + Education */}
         <div className="lg:w-2/3 flex flex-col gap-12">
-          {/* Professional Experience Timeline */}
-          <section>
-            <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center lg:text-left">
-              Professional Experience
-            </h2>
-            <div className="relative border-l-2 border-indigo-200 ml-4 pl-6 space-y-8">
-              {experience.map((job, i) => (
-                <div key={i} className="relative group">
-                  <div className="absolute -left-4 top-2 w-4 h-4 bg-indigo-600 rounded-full border-2 border-white shadow-lg transition-transform duration-300 group-hover:scale-110"></div>
-                  <Card
-                    title={job.title}
-                    subtitle={`${job.company} | ${job.period}`}
-                    className="bg-white hover:bg-indigo-50 transition-colors duration-300"
-                  >
-                    <ul className="list-disc list-inside text-gray-700 space-y-1 mt-2">
-                      {job.points.map((point, idx) => (
-                        <li key={idx}>{point}</li>
-                      ))}
-                    </ul>
-                  </Card>
-                </div>
-              ))}
-            </div>
-          </section>
+          {/* Experience Timeline */}
+          <ExperienceTimeline />
 
           {/* Leadership & Certifications */}
           <section>
@@ -237,7 +181,7 @@ export default function Resume() {
                 return (
                   <div
                     key={category}
-                    className="bg-indigo-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
+                    className="bg-white-50/80 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
                   >
                     <h3 className="text-gray-700 font-semibold mb-1">
                       {category}
@@ -256,7 +200,7 @@ export default function Resume() {
           {/* Education Section */}
           <section className="text-center lg:text-left">
             <h2 className="text-3xl font-bold text-gray-800 mb-6">Education</h2>
-            <div className="bg-indigo-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row items-center gap-4">
+            <div className="bg-indigo-50/50 p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row items-center gap-4">
               {/* Icon */}
               <div className="flex-shrink-0">
                 <div className="h-12 w-12 bg-indigo-600 text-white rounded-full flex items-center justify-center text-lg">

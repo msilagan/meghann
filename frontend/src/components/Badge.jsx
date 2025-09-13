@@ -1,15 +1,35 @@
 import React from "react";
-export default function Badge({ label }) {
+
+export default function Badge({ label, size = "md" }) {
+  // Define size options
+  const sizes = {
+    sm: {
+      padding: "px-2 py-2",
+      text: "text-xs",
+    },
+    md: {
+      padding: "px-4 py-2",
+      text: "text-sm",
+    },
+    lg: {
+      padding: "px-6 py-3",
+      text: "text-base",
+    },
+  };
+
+  const { padding, text } = sizes[size] || sizes.md;
+
   return (
-    <span className="relative inline-block rounded-full p-[2px]">
-      {" "}
-      {/* Gradient border wrapper */}{" "}
-      <span className="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-300 to-blue-300"></span>{" "}
-      {/* Inner transparent badge */}{" "}
-      <span className="relative inline-block px-4 py-2 rounded-full bg-white border border-transparent text-gray-600 font-small">
-        {" "}
-        {label}{" "}
-      </span>{" "}
+    <span className="relative inline-block rounded-full p-[1px]">
+      {/* Gradient border wrapper */}
+      <span className="absolute inset-0 rounded-full bg-gradient-to-tr from-pink-300 to-blue-300"></span>
+
+      {/* Inner badge */}
+      <span
+        className={`relative inline-block ${padding} rounded-full bg-white border border-transparent text-gray-600 font-medium ${text}`}
+      >
+        {label}
+      </span>
     </span>
   );
 }

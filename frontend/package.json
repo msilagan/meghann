@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://msilagan.github.io/meghann/",
+  "homepage": "https://meghannsilagan.com",
   "scripts": {
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
