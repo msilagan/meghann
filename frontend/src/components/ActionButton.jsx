@@ -2,7 +2,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function ActionButton({ icon: Icon, iconSize = 20, text, to, external, download }) {
+export default function ActionButton({
+  icon: Icon,
+  iconSize = 20,
+  text,
+  to,
+  external,
+  download,
+}) {
   const commonClasses = `
     relative inline-flex items-center gap-2 px-6 py-3 rounded-full
     font-semibold text-white 
@@ -33,5 +40,9 @@ export default function ActionButton({ icon: Icon, iconSize = 20, text, to, exte
     );
   }
 
-  return <NavLink to={to} className={commonClasses}>{innerSpan}</NavLink>;
+  return (
+    <NavLink to={to} className={commonClasses}>
+      {innerSpan}
+    </NavLink>
+  );
 }

@@ -6,8 +6,8 @@ export default function Navbar({ darkMode, setDarkMode }) {
   const [isOpen, setIsOpen] = useState(false);
   const links = [
     { path: "/", label: "Home" },
-    { path: "/favorites", label: "Favorites" },
     { path: "/resume", label: "Resume" },
+    { path: "/favorites", label: "Playground" },
   ];
 
   return (

@@ -7,7 +7,7 @@ export default function TypingText({
   pause = 900, // pause after typing full word (ms)
   color = "text-indigo-600",
   fontSize = "text-3xl", // Tailwind font size class
-  beginChar = "> "
+  beginChar = "> ",
 }) {
   const [displayed, setDisplayed] = useState("");
   const [wordIndex, setWordIndex] = useState(0);

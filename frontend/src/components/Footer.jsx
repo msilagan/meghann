@@ -124,7 +124,9 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col gap-1 items-center lg:items-start">
-              <h3 className="font-bold uppercase text-gray-400 dark:text-gray-200 pb-1">Legal</h3>
+              <h3 className="font-bold uppercase text-gray-400 dark:text-gray-200 pb-1">
+                Legal
+              </h3>
               <a
                 href="#imprint"
                 className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
