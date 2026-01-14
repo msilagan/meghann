@@ -62,39 +62,33 @@ export default function Footer() {
           </div>
 
           {/* Right: Links */}
-          <div className="flex flex-col sm:flex-row gap-12 text-sm text-center lg:text-left">
+          <div className="flex flex-col lg:flex-row gap-12 text-sm text-center lg:text-left">
             <div className="flex flex-col gap-1 items-center lg:items-start">
-              <h3 className="font-bold uppercase text-gray-400 dark:text-gray-200 pb-1">
-                Explore
+              <h3 className="font-bold uppercase text-gray-600 dark:text-gray-200 pb-1">
+                Quick Links
               </h3>
               <a
-                href="#features"
+                href="#resume"
                 className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
-                Features
+                Resume
               </a>
               <a
-                href="#docs"
+                href="#about"
                 className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
-                Docs
+                About Me
               </a>
               <a
-                href="#pricing"
+                href="#contact"
                 className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
-                Pricing
-              </a>
-              <a
-                href="#security"
-                className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
-              >
-                Security
+                Contact
               </a>
             </div>
 
             <div className="flex flex-col gap-1 items-center lg:items-start">
-              <h3 className="font-bold uppercase text-gray-400 dark:text-gray-200 pb-1">
+              {/* <h3 className="font-bold uppercase text-gray-400 dark:text-gray-200 pb-1">
                 Company
               </h3>
               <a
@@ -120,12 +114,12 @@ export default function Footer() {
                 className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
                 News
-              </a>
+              </a> */}
             </div>
 
             <div className="flex flex-col gap-1 items-center lg:items-start">
-              <h3 className="font-bold uppercase text-gray-400 dark:text-gray-200 pb-1">
-                Legal
+              {/* <h3 className="font-bold uppercase text-gray-400 dark:text-gray-200 pb-1">
+                Other
               </h3>
               <a
                 href="#imprint"
@@ -144,7 +138,7 @@ export default function Footer() {
                 className="text-gray-600 dark:text-gray-400 hover:underline hover:text-indigo-700 transition-colors"
               >
                 Terms of Use
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

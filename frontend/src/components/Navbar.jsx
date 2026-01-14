@@ -7,7 +7,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
   const links = [
     { path: "/", label: "Home" },
     { path: "/resume", label: "Resume" },
-    { path: "/favorites", label: "Playground" },
+    // { path: "/favorites", label: "Playground" },
   ];
 
   return (
