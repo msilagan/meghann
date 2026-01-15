@@ -1,7 +1,7 @@
 # meghann
 Personal website made with react and golang
 
-# Quickstart
+# Quickstart (Local)
 ### Start Everything
 1. (from root) `make dev`
 
