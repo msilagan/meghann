@@ -1,16 +1,26 @@
 import React from "react";
+import TypingText from "./TypingText";
 
 export default function AboutMe() {
   return (
     <section
       id="about"
-      className="w-full flex justify-center py-20 px-6 bg-gray-900 text-left"
+      className="relative flex flex-col items-center justify-center w-full min-h-screen text-left bg-transparent"
     >
       <div className="max-w-3xl font-mono">
-        {/* Command Line */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl text-green-400 mb-4">
-          $ whoami
+      {/* Typing Highlights */}
+        <h2>
+          <TypingText
+            words={["whoami"]}
+            beginChar="$"
+            speed={100}
+            deleteSpeed={29}
+            pause={3500}
+            color="text-green-400 dark:text-indigo-300"
+            fontSize="text-2xl sm:text-3xl md:text-4xl mb-4"
+          />
         </h2>
+        
 
         {/* Output */}
         <p className="text-indigo-200 text-lg sm:text-xl leading-relaxed">

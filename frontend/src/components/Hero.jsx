@@ -4,6 +4,7 @@ import Badge from "./Badge";
 import ActionButton from "./ActionButton";
 import { FaLinkedin, FaGithub, FaEnvelope, FaDownload, FaWpexplorer } from "react-icons/fa";
 import MyIcon from "../assets/meghann_icon.png";
+import ScrollIndicator from "./Scroll";
 
 const keySkills = ["Terraform", "AWS", "GCP", "Python", "Kubernetes"];
 const heroHighlights = [
@@ -54,7 +55,7 @@ export default function Hero() {
         deleteSpeed={29}
         pause={1950}
         color="text-indigo-500 dark:text-indigo-300"
-        fontSize="text-2xl sm:text-3xl"
+        fontSize="text-2xl sm:text-3xl font-bold"
       />
     </p>
 
@@ -118,37 +119,43 @@ export default function Hero() {
         y1="2%"
         x2="40%"
         y2="2%"
-        stroke="rgba(0,255,255,0.1)"
+        className="stroke-cyan-400/15 dark:stroke-cyan-300/10"
         strokeWidth="1"
       />
+
       {/* Bottom-right line */}
       <line
         x1="60%"
         y1="98%"
         x2="95%"
         y2="98%"
-        stroke="rgba(0,255,255,0.1)"
+        className="stroke-cyan-400/15 dark:stroke-cyan-300/10"
         strokeWidth="1"
       />
+
       {/* Left vertical line */}
       <line
         x1="5%"
         y1="2%"
         x2="5%"
         y2="25%"
-        stroke="rgba(0,255,255,0.1)"
+        className="stroke-cyan-400/15 dark:stroke-cyan-300/10"
         strokeWidth="1"
       />
+
       {/* Right vertical line */}
       <line
         x1="95%"
         y1="75%"
         x2="95%"
         y2="98%"
-        stroke="rgba(0,255,255,0.1)"
+        className="stroke-cyan-400/15 dark:stroke-cyan-300/10"
         strokeWidth="1"
       />
     </svg>
+
+    
+    <ScrollIndicator />
   </section>
   </>
   );

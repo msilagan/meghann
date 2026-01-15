@@ -44,7 +44,7 @@ export default function TypingText({
   }, [displayed, isDeleting, wordIndex, words, speed, deleteSpeed, pause]);
 
   return (
-    <span className={`relative ${color} font-mono font-bold ${fontSize}`}>
+    <span className={`relative ${color} font-mono ${fontSize}`}>
       <span>
         {beginChar} {displayed}
       </span>

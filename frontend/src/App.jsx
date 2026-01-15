@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import Home from "./components/Home";
 import Resume from "./components/Resume";
 import Favorites from "./components/Favorites";
+import AboutMe from "./components/AboutMe";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -36,6 +37,10 @@ export default function App() {
         <Route
           path="/resume"
           element={<Resume darkMode={darkMode} setDarkMode={setDarkMode} />}
+        />
+        <Route
+          path="/about"
+          element={<AboutMe darkMode={darkMode} setDarkMode={setDarkMode} />}
         />
       </Routes>
     </Layout>
