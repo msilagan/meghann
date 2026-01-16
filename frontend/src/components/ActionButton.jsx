@@ -11,8 +11,9 @@ export default function ActionButton({
   download,
 }) {
   const commonClasses = `
-    relative inline-flex items-center gap-2 px-6 py-3 rounded-full
-    font-semibold text-white 
+    relative inline-flex items-center gap-2 rounded-full
+    md:px-6 md:py-3 px-4 py-2
+    font-semibold text-white sm:text-lg text-sm
     bg-gradient-to-r from-indigo-400 to-pink-300 dark:from-indigo-900 dark:to-pink-900
     shadow-lg overflow-hidden group hover:from-pink-500 hover:to-indigo-600
     transition-colors duration-300

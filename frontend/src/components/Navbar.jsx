@@ -15,7 +15,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
       <header className="relative w-full top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           {/* Logo */}
-          <h1 className="text-xl text-indigo-600 font-light dark:text-indigo-100">
+          <h1 className="text-l sm:text-xl text-indigo-600 font-light dark:text-indigo-100">
             Meghann Silagan
           </h1>
 

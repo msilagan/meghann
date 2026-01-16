@@ -4,7 +4,7 @@ export default function Badge({ label, size = "md" }) {
   // Define size options
   const sizes = {
     sm: {
-      padding: "px-2 py-2",
+      padding: "px-1 py-1 sm:px-2 sm:py-2",
       text: "text-xs",
     },
     md: {

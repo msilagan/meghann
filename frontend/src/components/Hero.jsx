@@ -43,31 +43,31 @@ export default function Hero() {
     />
 
     {/* Heading */}
-    <h1 className="text-5xl sm:text-6xl font-light text-indigo-800 dark:text-indigo-50 mb-4">
+    <h1 className="text-4xl sm:text-6xl font-light text-indigo-800 dark:text-indigo-50 mb-3 sm:mb-4">
       Meghann Silagan
     </h1>
 
     {/* Typing Highlights */}
-    <p className="mb-6">
+    <p className="mb-4 sm:mb-6">
       <TypingText
         words={heroHighlights}
         speed={60}
         deleteSpeed={29}
         pause={1950}
         color="text-indigo-500 dark:text-indigo-300"
-        fontSize="text-2xl sm:text-3xl font-bold"
+        fontSize="text-xl sm:text-3xl font-bold"
       />
     </p>
 
     {/* Key Skills Badges */}
-    <div className="flex flex-wrap justify-center gap-3 mb-2 md:mb-8">
+    <div className="flex flex-wrap justify-center gap-3 mb-4 md:mb-8">
       {keySkills.map((skill, i) => (
         <Badge key={i} label={skill} size="sm" delay={i * 50} />
       ))}
     </div>
 
     {/* Social Icons */}
-    <div className="flex gap-6 text-indigo-500 text-3xl mb-2 md:mb-8 dark:text-indigo-300">
+    <div className="flex gap-6 text-indigo-500 text-2xl md:text-3xl mb-2 md:mb-8 dark:text-indigo-300">
       <a
         href="https://linkedin.com/in/meghann-silagan"
         target="_blank"
