@@ -47,7 +47,7 @@ export default function ExperienceTimeline() {
   return (
     // Professional Experience Timeline
     <section>
-      <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center lg:text-left">
+      <h2 className="text-3xl font-bold text-indigo-900 mt-6 mb-6 text-center lg:text-left">
         Professional Experience
       </h2>
 
@@ -64,8 +64,9 @@ export default function ExperienceTimeline() {
 
             <Card
               title={job.title}
+              color="indigo"
               subtitle={`${job.company} | ${job.period}`}
-              className="bg-white hover:bg-indigo-50 transition-colors duration-300"
+              className="hover:bg-indigo-50 transition-colors duration-300"
             >
               <ul className="list-disc list-inside text-gray-700 space-y-1 mt-2">
                 {job.points.map((point, idx) => (

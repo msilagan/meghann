@@ -28,8 +28,11 @@ export default function WhoAmI() {
 
         {/* Output */}
         <p className="text-indigo-800 dark:text-indigo-200 text-lg sm:text-xl leading-relaxed">
-          Hi, I’m <span className="text-green-400 dark:text-green-400">Meghann Silagan</span> — A
-          Site Reliability Engineer specializing in resilient systems and
+          Hi, I’m{" "}
+          <span className="text-green-400 dark:text-green-400">
+            Meghann Silagan
+          </span>{" "}
+          — A Site Reliability Engineer specializing in resilient systems and
           automation at scale. I’ve led reliability and infrastructure efforts
           across AWS and GCP, leveraging comprehensive observability and
           cloud-native practices like Infrastructure as Code to build

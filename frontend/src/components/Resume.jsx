@@ -4,7 +4,7 @@ import Card from "./Card";
 import Badge from "./Badge";
 import ExperienceTimeline from "./ExperienceTimeline";
 import MyIcon from "../assets/meghann_icon.png";
-import { FaLinkedin, FaGithub, FaTwitter, FaDownload } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from "react-icons/fa";
 
 // Core skills for badges
 const coreSkills = [
@@ -73,7 +73,7 @@ export default function Resume() {
   return (
     <div className="flex flex-col lg:flex-row gap-12">
       {/* Left Column: Hero + Core Skills + Social */}
-      <div className="lg:w-1/3 flex flex-col items-center gap-8 bg-gradient-to-b from-indigo-50 via-white to-pink-50 p-8 rounded-3xl shadow-lg relative">
+      <div className="lg:w-1/3 flex flex-col items-center gap-8 bg-gradient-to-b from-indigo-50 via-white to-pink-50 p-8 shadow-sm mt-6 ml-2 relative">
         {/* Accent background behind name */}
         <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-40 h-40 bg-indigo-100 rounded-full -z-10 opacity-30"></div>
 
@@ -82,16 +82,16 @@ export default function Resume() {
           <img
             src={MyIcon}
             alt="Meghann Silagan"
-            className="w-36 h-36 rounded-full shadow-xl border-4 border-indigo-200 hover:scale-105 transition-transform duration-300"
+            className="w-40 h-40 rounded-full shadow-xl border-4 border-indigo-200 hover:scale-105 transition-transform duration-300"
           />
-          <h1 className="text-5xl font-extrabold text-indigo-600 text-center leading-tight">
+          <h1 className="text-5xl font-extrabold text-indigo-800 text-center leading-tight">
             MEGHANN C. SILAGAN
           </h1>
           <p className="text-xl text-gray-600 font-medium text-center mt-2">
             DevOps Engineer
           </p>
           <p className="text-gray-500 text-center mt-1">
-            Lover of Things | Technical Problem Solver
+            Lover of Learning | Technical Problem Solver
           </p>
         </section>
         <a
@@ -106,26 +106,29 @@ export default function Resume() {
 
         {/* Social Links */}
         <section className="flex gap-6 text-indigo-600 text-3xl mt-3">
+          {/* Icons in a row */}
+
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://github.com/msilagan"
             target="_blank"
             rel="noreferrer"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://github.com/yourusername"
-            target="_blank"
-            rel="noreferrer"
+            className="text-indigo-500 hover:text-indigo-800 transition-colors"
           >
             <FaGithub />
           </a>
           <a
-            href="https://twitter.com/yourhandle"
+            href="https://linkedin.com/in/meghann-silagan"
             target="_blank"
             rel="noreferrer"
+            className="text-indigo-500 hover:text-indigo-800 transition-colors"
           >
-            <FaTwitter />
+            <FaLinkedin />
+          </a>
+          <a
+            href="mailto:meghannsilagan@gmail.com"
+            className="text-indigo-500 hover:text-indigo-800 transition-colors"
+          >
+            <FaEnvelope />
           </a>
         </section>
 
@@ -146,7 +149,7 @@ export default function Resume() {
 
         {/* Leadership & Certifications */}
         <section>
-          <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center lg:text-left">
+          <h2 className="text-3xl font-bold text-indigo-900 mb-6 text-center lg:text-left">
             Leadership & Certifications
           </h2>
           <div className="space-y-6">
@@ -154,8 +157,9 @@ export default function Resume() {
               <Card
                 key={i}
                 title={lead.title}
+                color="indigo"
                 subtitle={`${lead.org} | ${lead.period}`}
-                className="bg-white hover:bg-indigo-50 transition-colors duration-300"
+                className="hover:bg-indigo-50 transition-colors duration-300"
               >
                 <ul className="list-disc list-inside text-gray-700 space-y-1 mt-2">
                   {lead.points.map((point, idx) => (
@@ -169,7 +173,7 @@ export default function Resume() {
 
         {/* Additional Skills */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center lg:text-left">
+          <h2 className="text-2xl font-bold text-indigo-900 mb-4 text-center lg:text-left">
             Additional Skills
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -179,9 +183,9 @@ export default function Resume() {
               return (
                 <div
                   key={category}
-                  className="bg-white-50/80 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white-50/80 p-4 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <h3 className="text-gray-700 font-semibold mb-1">
+                  <h3 className="text-indigo-800 font-semibold mb-1">
                     {category}
                   </h3>
                   <ul className="list-disc list-inside text-gray-600">
@@ -196,19 +200,19 @@ export default function Resume() {
         </section>
 
         {/* Education Section */}
-        <section className="text-center lg:text-left">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Education</h2>
-          <div className="bg-indigo-50/50 p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row items-center gap-4">
+        <section className="text-center lg:text-left mb-4">
+          <h2 className="text-3xl font-bold text-indigo-900 mb-6">Education</h2>
+          <div className="bg-indigo-50/50 p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row items-center gap-4">
             {/* Icon */}
             <div className="flex-shrink-0">
-              <div className="h-12 w-12 bg-indigo-600 text-white rounded-full flex items-center justify-center text-lg">
+              <div className="h-12 w-12 bg-indigo-600/20 text-white rounded-full flex items-center justify-center text-lg">
                 🎓
               </div>
             </div>
 
             {/* Education Info */}
             <div className="text-left flex-1">
-              <h3 className="text-xl font-semibold text-indigo-600">
+              <h3 className="text-xl font-semibold text-indigo-800">
                 Bachelor of Computer Engineering
               </h3>
               <p className="text-gray-700 mt-1">

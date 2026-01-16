@@ -19,9 +19,7 @@ export default function Layout({ children, darkMode, setDarkMode }) {
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
       {/* Main content wrapper */}
-      <main className="flex-1 w-full">
-        {children}
-      </main>
+      <main className="flex-1 w-full">{children}</main>
 
       {/* Footer */}
       <Footer />
