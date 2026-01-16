@@ -4,7 +4,8 @@ import Layout from "./components/Layout";
 import Home from "./components/Home";
 import Resume from "./components/Resume";
 import Favorites from "./components/Favorites";
-import AboutMe from "./components/AboutMe";
+import AboutMe from "./components/WhoAmI";
+import WhoAmI from "./components/WhoAmI";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -39,8 +40,8 @@ export default function App() {
           element={<Resume darkMode={darkMode} setDarkMode={setDarkMode} />}
         />
         <Route
-          path="/about"
-          element={<AboutMe darkMode={darkMode} setDarkMode={setDarkMode} />}
+          path="/who-am-i"
+          element={<WhoAmI darkMode={darkMode} setDarkMode={setDarkMode} />}
         />
       </Routes>
     </Layout>

@@ -1,7 +1,7 @@
 import React from "react";
 import TypingText from "./TypingText";
 
-export default function AboutMe() {
+export default function WhoAmI() {
   return (
     <section
       id="about"
@@ -27,7 +27,7 @@ export default function AboutMe() {
         </h2>
 
         {/* Output */}
-        <p className="text-indigo-600 dark:text-indigo-200 text-lg sm:text-xl leading-relaxed">
+        <p className="text-indigo-800 dark:text-indigo-200 text-lg sm:text-xl leading-relaxed">
           Hi, I’m <span className="text-green-400 dark:text-green-400">Meghann Silagan</span> — A
           Site Reliability Engineer specializing in resilient systems and
           automation at scale. I’ve led reliability and infrastructure efforts

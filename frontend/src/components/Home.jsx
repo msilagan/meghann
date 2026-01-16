@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "./Hero";
 import Skills from "./Skills";
-import AboutMe from "./AboutMe";
+import WhoAmI from "./WhoAmI";
 
 const professionalHighlights = [
   "Engineered scalable cloud infrastructure for production workloads across AWS and GCP.",
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <AboutMe />
+      <WhoAmI />
       <Skills />
     </>
   );

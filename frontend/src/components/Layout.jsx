@@ -9,7 +9,7 @@ export default function Layout({ children, darkMode, setDarkMode }) {
       className={`
         min-h-screen flex flex-col
         bg-gradient-to-br
-        from-indigo-100 via-white/10 to-pink-100/80
+        from-indigo-100/80 via-white/30 to-pink-100
         dark:from-indigo-950 dark:via-gray-900 dark:to-pink-950
         transition-colors duration-700
         backdrop-blur-sm
