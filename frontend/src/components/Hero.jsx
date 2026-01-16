@@ -31,9 +31,9 @@ export default function Hero() {
   return (
     <>
     {/* Hero Section */}
-    <section
+  <section
     className="relative flex flex-col items-center justify-center w-full text-center bg-transparent"
-    style={{ height: "calc(100vh - 80px)" }} // full viewport minus navbar
+    style={{ height: "calc(100vh - 50px)" }} // full viewport minus navbar
   >
     {/* Profile Image */}
     <img
@@ -43,7 +43,7 @@ export default function Hero() {
     />
 
     {/* Heading */}
-    <h1 className="text-5xl sm:text-6xl font-light text-indigo-800 dark:text-indigo-100 mb-4">
+    <h1 className="text-5xl sm:text-6xl font-light text-indigo-800 dark:text-indigo-50 mb-4">
       Meghann Silagan
     </h1>
 
@@ -60,14 +60,14 @@ export default function Hero() {
     </p>
 
     {/* Key Skills Badges */}
-    <div className="flex flex-wrap justify-center gap-3 mb-8">
+    <div className="flex flex-wrap justify-center gap-3 mb-2 md:mb-8">
       {keySkills.map((skill, i) => (
         <Badge key={i} label={skill} size="sm" delay={i * 50} />
       ))}
     </div>
 
     {/* Social Icons */}
-    <div className="flex gap-6 text-indigo-500 text-3xl mb-8 dark:text-indigo-300">
+    <div className="flex gap-6 text-indigo-500 text-3xl mb-2 md:mb-8 dark:text-indigo-300">
       <a
         href="https://linkedin.com/in/meghann-silagan"
         target="_blank"
@@ -111,6 +111,8 @@ export default function Hero() {
       />
     </div>
 
+    <ScrollIndicator />
+
     {/* Edge circuit lines - wider horizontal spread */}
     <svg className="absolute inset-0 w-full h-full pointer-events-none">
       {/* Top-left line */}
@@ -153,9 +155,6 @@ export default function Hero() {
         strokeWidth="1"
       />
     </svg>
-
-    
-    <ScrollIndicator />
   </section>
   </>
   );
