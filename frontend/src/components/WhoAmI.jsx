@@ -5,7 +5,7 @@ export default function WhoAmI() {
   return (
     <section
       id="about"
-      className="flex flex-col items-center justify-center w-screen h-screen 
+      className="flex flex-col items-center justify-center w-screen h-screen py-4 px-4
       bg-gradient-to-br
         from-indigo-100 via-indigo-100/20 to-pink-100/75
         dark:from-indigo-950 dark:via-gray-900 dark:to-pink-900/10
@@ -27,7 +27,7 @@ export default function WhoAmI() {
         </h2>
 
         {/* Output */}
-        <p className="text-indigo-800 dark:text-indigo-200 text-lg sm:text-xl leading-relaxed">
+        <p className="text-indigo-800 dark:text-indigo-200 text-base sm:text-2xl leading-relaxed">
           Hi, I’m{" "}
           <span className="text-green-400 dark:text-green-400">
             Meghann Silagan
