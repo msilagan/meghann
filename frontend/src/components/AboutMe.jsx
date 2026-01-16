@@ -5,10 +5,10 @@ export default function AboutMe() {
   return (
     <section
       id="about"
-      className="relative flex flex-col items-center justify-center w-full min-h-screen text-left bg-transparent"
+      className="flex flex-col items-center justify-center w-screen h-screen bg-black/80 text-left"
     >
       <div className="max-w-3xl font-mono">
-      {/* Typing Highlights */}
+        {/* Typing Highlights */}
         <h2>
           <TypingText
             words={["whoami"]}
@@ -20,15 +20,15 @@ export default function AboutMe() {
             fontSize="text-2xl sm:text-3xl md:text-4xl mb-4"
           />
         </h2>
-        
 
         {/* Output */}
         <p className="text-indigo-200 text-lg sm:text-xl leading-relaxed">
-          Hi, I’m <span className="text-green-400">Meghann Silagan</span> — a
-          Cloud Engineer and DevOps enthusiast with a passion for automation,
-          scalable infrastructure, and building clean processes. My work spans
-          AWS, GCP, and modern cloud-native methodologies like Infrastructure as
-          Code.
+          Hi, I’m <span className="text-green-400">[Meghann Silagan]</span> — A
+          Site Reliability Engineer specializing in resilient systems and
+          automation at scale. I’ve led reliability and infrastructure efforts
+          across AWS and GCP, leveraging comprehensive observability and
+          cloud-native practices like Infrastructure as Code to build
+          sustainable, high-impact platforms.
         </p>
 
         {/* Optional extra "commands" for flavor */}
